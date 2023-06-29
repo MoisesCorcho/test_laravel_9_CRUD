@@ -18,6 +18,10 @@ Route::get('route-test', function() {
     return response()->json('Hola Moises Si funciona.');
 });
 
+Route::get('route-test-2', function() {
+    return response()->json('Hola Moises Si funciona la segunda prueba.');
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
