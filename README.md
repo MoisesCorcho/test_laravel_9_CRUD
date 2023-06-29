@@ -1,66 +1,45 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Instalaciones necesarias
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+-   Node - npm - **https://nodejs.org/en/**
+-   Composer - **https://getcomposer.org/**
+-   XAMPP - **https://www.apachefriends.org/es/index.html**
+-   Git - **https://git-scm.com/**
 
-## About Laravel
+## Pasos para correr el backend
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   Clonar el repositorio con **git clone**
+-   Copiar el archivo **.env.example** a **.env** y editar ahí las credenciales de la base de datos
+-   Correr el comando **composer install**
+-   Correr el comando **php artisan key:generate**
+-   Correr el comando **php artisan migrate --seed** (Tiene datos de prueba)
+-   Correr el comando **php artisan jwt:secret** que generará una llave secreta para la libreria de Token jwt-auth
+-   Correr el comando **php artisan serve** para correr el servidor
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Credenciales de acceso:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Credenciales de administrador: __francisco@gmail.com__ - **1005478122**
+-   Credenciales de vendedor: __kaled@gmail.com__ - **1005478123**
 
-## Learning Laravel
+## Algunos comandos de laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Correr el comando **php artisan route:list** para ver las rutas.
+-   Correr el comando **php artisan optimize** para guardar cambios en el archivo de las rutas.
+-   Correr el comando **php artisan migrate:fresh --seed** para borrar todas las tablas de BD y luego ejectutar las migraciones, el flag **--seed** es para que se ejecuten los seeders que son datos que que coloqué para que testear.
+-   Correr el comando **php artisan serve --port=8001** para cambiar el puerto de ejecucion del servidor y **--host=[ip]** para cambiar la ip del servidor.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Si se encuentra con el siguiente error, siga los siguientes pasos.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
 
-## Laravel Sponsors
+Problem 1 - maatwebsite/excel[3.1.28, ..., 3.1.30] require phpoffice/phpspreadsheet 1.16._ -> satisfiable by phpoffice/phpspreadsheet[1.16.0]. - maatwebsite/excel[3.1.31, ..., 3.1.x-dev] require phpoffice/phpspreadsheet ^1.18 -> satisfiable by phpoffice/phpspreadsheet[1.18.0, ..., 1.26.0]. - maatwebsite/excel 3.1.27 requires phpoffice/phpspreadsheet ^1.16 -> satisfiable by phpoffice/phpspreadsheet[1.16.0, ..., 1.26.0]. - maatwebsite/excel 3.1.26 requires phpoffice/phpspreadsheet ^1.15 -> satisfiable by phpoffice/phpspreadsheet[1.15.0, ..., 1.26.0]. - maatwebsite/excel[3.1.0, ..., 3.1.25] require php ^7.0 -> your php version (8.1.6) does not satisfy that requirement. - phpoffice/phpspreadsheet[1.15.0, ..., 1.26.0] require ext-gd _ -> it is missing from your system. Install or enable PHP's gd extension. - Root composer.json requires maatwebsite/excel ^3.1 -> satisfiable by maatwebsite/excel[3.1.0, ..., 3.1.x-dev].
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+To enable extensions, verify that they are enabled in your .ini files: - C:\xampp\php\php.ini
+You can also run `php --ini` in a terminal to see which files are used by PHP in CLI mode.
+Alternatively, you can run Composer with `--ignore-platform-req=ext-gd` to temporarily ignore these required extensions.
 
-### Premium Partners
+Use the option --with-all-dependencies (-W) to allow upgrades, downgrades and removals for packages currently locked to specific versions.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Solución.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Debemos habilitar las extensiones en el archivo php.ini, primero debemos apagar el servicio de apache para luego ir al archivo php.ini y remover el punto y coma ";" de la linea "extension=gd".

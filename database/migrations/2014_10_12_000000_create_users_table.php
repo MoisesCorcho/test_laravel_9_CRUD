@@ -8,24 +8,56 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->uuid('id')->primary();
+            $table->string('firstName')
+                ->comment('Nombre del usuario');
+            $table->string('lastName')
+                ->comment('Apellido del usuario');
+            $table->string('photo')
+                ->comment('Foto de perfil de usuario')
+                ->nullable();
+            $table->string('cellphone')
+                ->comment('Numero de celular del usuario')
+                ->nullable();
+            $table->string('email')
+                ->comment('Correo electronico del usuario')
+                ->nullable()
+                ->unique();
+            $table->enum('dniType', [
+                'CC',
+                'NIT'
+            ])->default('CC')
+                ->comment('Tipo de documento de identidad del usuario');
+            $table->string('dni')
+                ->comment('Numero de identificacion del usuario')
+                ->unique();
+            $table->string('password')
+                ->comment('Contraseña del usuario');
+            $table->boolean('active')
+                ->default(true)
+                ->comment('Estado del usario');
+            $table->integer('visitsPerDay')
+                ->default(8)
+                ->comment('Numero de visitas diarias del usuario');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('users');
     }
